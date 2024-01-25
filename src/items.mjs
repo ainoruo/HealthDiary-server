@@ -10,30 +10,37 @@ const getItems = (req, res) => {
 res.json(items);
 };
 
-const getItemById = (req, res) => {
 // palauta vain se objekti, jonka id vastaa pyydettyä, muuten 404
-//   console.log('requested item id', req.params.id);
+const getItemById = (req, res) => {
   const itemFound = items.find(item => item.id == req.params.id);
-//   console.log('found item', itemFound);
   if (itemFound) {
     res.json(itemFound);
   } else {
     res.status(404).json({error: 'not found'});
   }
-  
 };
 
 const postItem = (req, res) => {
-    // TODO (vapaaehtonen, jatketaan tästä ens kerralla): lisää postattu item items-taulukkoon
-    res.json({message: 'item created'});
+  //lisää postattu item taulukkoon
+  console.log('postItem request body',req.body);
+  //error if name property is missing
+  if (!req.body.name) {
+    return res.status(400).json({error: 'item name missing'});
+  }
+  // new id: add 1 to last id number in the items array
+  const newId = items[items.length-1].id +1;
+  const newItem = {id: newId, name: req.body.name};
+  items.push(newItem);
+  res.status(201).json({message: 'item created'});
   };
 
 const deleteItem = (req, res) => {
-    res.json({message: 'delete placeholder'});
+  
+  res.json({message: 'delete placeholder'});
 }
 
 const putItems = (req, res) => {
-    res.json({message: 'put placeholder'});
+  res.json({message: 'put placeholder'});
 }
 
 export {getItems, getItemById, postItem, deleteItem, putItems};
