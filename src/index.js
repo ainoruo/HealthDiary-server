@@ -3,6 +3,7 @@ import express from 'express';
 import path from 'path';
 import {fileURLToPath} from 'url';
 import { deleteItem, getItemById, getItems, postItem, putItems } from './items.mjs';
+import { getUsers, getUsersById, postLogin, postUser, putUser } from './users.mjs';
 const hostname = '127.0.0.1';
 const port = 3000;
 const app = express();
@@ -25,10 +26,22 @@ app.get('/items', getItems);
 app.get('/items/:id', getItemById);
 // POST http://127.0.0.1:3000/items/
 app.post('/items', postItem);
-//PUT
+// PUT
 app.put('/items/:id', putItems);
-//DELETE
+// DELETE
 app.delete('/items/:id', deleteItem);
+
+// users resource
+// list users
+app.get('/users', getUsers);
+// get info of a user
+app.get('/users/:id', getUsersById);
+// user registration
+app.post('/users', postUser);
+// user login
+app.post('/users/login', postLogin);
+// update user
+app.put('/users/:id', putUser);
 
 // GET http://127.0.0.1:3000
 // ei toimi tällä hetkellä, koska public-server tarjoilee index.html:n ensin
