@@ -19,26 +19,53 @@ const users = [
     }
   ];
 
-  //TODO: implement route handlers below for users
 
 const getUsers = (req, res) => {
     res.json(users);
 };
 
 const getUsersById = (req, res) => {
-    //TODO: implement this
-    res.send('not working yet')
-};
+    const userId = parseInt(req.params.id);
+    const user = users.find(user => user.id === userId);
+    if (!user) {
+      return res.status(404).send('User not found');
+    }
+    res.json(user);
+  };
 
 const postUser = (req, res) => {
-    //TODO: implement this
-    res.send('not working yet')
+    const { username, password } = req.body;
+    if (!username || !password) {
+        return res.status(400).json({ error: 'Missing username, password or email'})
+    }
+    const newUser = {
+        id: users.length + 1,
+        username,
+        password,
+        email
+    };
+    users.push(newUser);
+    res.status(201).json(newUser);
 };
 
-const  putUser = (req, res) => {
-    //TODO: implement this
-    res.send('not working yet')
-};
+const putUser = (req, res) => {
+    const userId = parseInt(req.params.id);
+    const { username, password, email } = req.body;
+    const userIndex = users.findIndex(user => user.id === userId);
+    if (userIndex === -1) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    if (username) {
+      users[userIndex].username = username;
+    }
+    if (password) {
+      users[userIndex].password = password;
+    }
+    if (email) {
+      users[userIndex].email = email;
+    }
+    res.json(users[userIndex]);
+  };
 
 // Dummy login, returns user object if username & password match
 const  postLogin = (req, res) => {
