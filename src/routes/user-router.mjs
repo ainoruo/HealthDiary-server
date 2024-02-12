@@ -1,5 +1,5 @@
 import express from 'express';
-import { getUsers, getUsersById, postLogin, postUser, putUser } from '../controllers/user-controller.mjs';
+import { getUsers, getUsersById, postLogin, postUser, putUser, deleteUser } from '../controllers/user-controller.mjs';
 
 const userRouter = express.Router();
 
@@ -15,7 +15,9 @@ userRouter.route('/:id')
   // get info of a user
   .get(getUsersById)
   // update user
-  .put(putUser);
+  .put(putUser)
+  //delete user based on id
+  .delete(deleteUser);
 
 // user login
 userRouter.post('/login', postLogin);
