@@ -10,33 +10,34 @@ const hostname = '127.0.0.1';
 const port = 3000;
 const app = express();
 
+// middleware, joka lisää CORS-otsakkeen jokaiseen lähtevään vastaukseen.
+// Eli kerrotaan selaimelle, että tämä palvelin sallii AJAX-pyynnöt
+// myös muista kuin samasta alkuperästä (url-osoitteesta, palvelimelta) ladatuilta sivuilta.
 app.use(cors());
 
+// middleware, joka parsii pyynnössä olevan JSON-datan ja lisää sen request-objektiin (req.body)
 app.use(express.json());
 
-app.use('/api/entries', entryRouter);
-
 // Staattinen sivusto palvelimen juureen (public-kansion sisältö näkyy osoitteessa http://127.0.0.1:3000/sivu.html)
+// Voit sijoittaa esim. valmiin client-sovelluksen tähän kansioon
 app.use(express.static('public'));
+
+// Staattinen sivusto voidaan tarjoilla myös "ali-url-osoitteessa": http://127.0.0.1:3000/sivusto
+// Tarjoiltava kansio määritellään relatiivisella polulla (tässä käytössä sama kansio kuin yllä).
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-// Staattinen sivusto "ali-url-osoitteessa": http://127.0.0.1:3000/sivusto
-// Tarjoiltava kansio määritellään relatiivisella polulla
 app.use('/sivusto', express.static(path.join(__dirname, '../public')));
 
-//resource item endpoints
+// Test RESOURCE /items endpoints (just mock data for testing, not connected to any database)
 app.use('/items', itemRouter);
 
-// users resource
-app.use('/users', userRouter);
+// bind base url (/api/entries resource) for all entry routes to entryRouter
+app.use('/api/entries', entryRouter);
 
+// Users resource (/api/users)
+app.use('/api/users', userRouter);
 
-// GET http://127.0.0.1:3000
-// ei toimi tällä hetkellä, koska public-server tarjoilee index.html:n ensin
-app.get('/', (req, res) => {
-  res.send('Welcome to my REST api!');
-});
-
+// Start the server
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
