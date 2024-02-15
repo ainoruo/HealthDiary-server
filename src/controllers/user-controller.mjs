@@ -1,3 +1,4 @@
+import bcrypt from 'bcryptjs';
 import {
   deleteUserById,
   insertUser,
@@ -28,7 +29,13 @@ const getUsersById = async (req, res) => {
 const postUser = async (req, res) => {
   const {username, password, email} = req.body;
   if (username && password && email) {
-    const result = await insertUser(req.body);
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+    const result = await insertUser({
+      username,
+      email,
+      password: hashedPassword,
+    });
     if (result.error) {
       return res.status(result.error).json(result);
     }
@@ -60,25 +67,5 @@ const deleteUser = async (req, res) => {
   }
   return res.json(result);
 };
-
-// Dummy login with mock data, returns user object if username & password match
-// const postLogin = (req, res) => {
-//   const userCreds = req.body;
-//   if (!userCreds.username || !userCreds.password) {
-//     return res.sendStatus(400);
-//   }
-//   const userFound = users.find((user) => user.username
-//   == userCreds.username);
-//   // user not found
-//   if (!userFound) {
-//     return res.status(403).json({error: 'username/password invalid'});
-//   }
-//   // check if posted password matches to user found password
-//   if (userFound.password === userCreds.password) {
-//     res.json({message: 'logged in successfully', user: userFound});
-//   } else {
-//     return res.status(403).json({error: 'username/password invalid'});
-//   }
-// };
 
 export {getUsers, getUsersById, postUser, putUser, deleteUser};
