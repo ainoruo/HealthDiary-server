@@ -1,27 +1,30 @@
 import express from 'express';
-import { getUsers, getUsersById, postLogin, postUser, putUser, deleteUser } from '../controllers/user-controller.mjs';
+import {
+  getUsers,
+  getUsersById,
+  postUser,
+  putUser,
+  deleteUser,
+} from '../controllers/user-controller.mjs';
 
 const userRouter = express.Router();
 
-//user endpoint
-userRouter.route('/')
-  // list users
-  .get(getUsers)
-  // user registration
-  .post(postUser);
+// user endpoint
+userRouter
+    .route('/')
+    // list users
+    .get(getUsers)
+    // user registration
+    .post(postUser);
 
-//user/:id endpoint
-userRouter.route('/:id')
-  // get info of a user
-  .get(getUsersById)
-  // update user
-  .put(putUser)
-  //delete user based on id
-  .delete(deleteUser);
-
-// user login
-userRouter.post('/login', postLogin);
-
-
+// user/:id endpoint
+userRouter
+    .route('/:id')
+    // get info of a user
+    .get(getUsersById)
+    // update user
+    .put(putUser)
+    // delete user based on id
+    .delete(deleteUser);
 
 export default userRouter;
