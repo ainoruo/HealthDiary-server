@@ -12,7 +12,7 @@ const postLogin = async (req, res) => {
   if (user.error) {
     return res.status(user.error).json(user);
   }
-  // TODO: compare password and hash, if match login successfull
+  // compare password and hash, if match login successfull
   const match = await bcrypt.compare(password, user.password);
   if (match) {
     delete user.password;
