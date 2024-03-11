@@ -50,6 +50,7 @@ app.use('/api/users', userRouter);
 // User authentication
 app.use('/api/auth', authRouter);
 
+
 // Default 404 not found
 app.use(notFoundHandler);
 // Error handler for sending all error cases

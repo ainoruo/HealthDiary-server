@@ -68,8 +68,8 @@ CREATE TABLE HRVMeasurements (
 --Insert data into HRVMeasurements
 INSERT INTO HRVMeasurements (user_id, measurement_date, time_of_day, hrv_value, notes, created_at) VALUES
   (1, '2024-01-10', '08:00:00', 65.3, 'Measured upon waking up', '2024-01-10 08:00:00'),
-  (1, '2024-01-10', '12:00:00', 68.7, 'Measured after morning workout', '2024-01-10 12:00:00'),
-  (2, '2024-01-10', '07:30:00', 59.8, 'Measured before breakfast', '2024-01-10 07:30:00');
+  (2, '2024-01-10', '12:00:00', 68.7, 'Measured after morning workout', '2024-01-10 12:00:00'),
+  (3, '2024-01-10', '07:30:00', 59.8, 'Measured before breakfast', '2024-01-10 07:30:00');
 
 --Table for exercise entries
 CREATE TABLE ExerciseEntries (

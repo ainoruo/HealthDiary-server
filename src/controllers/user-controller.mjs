@@ -7,6 +7,7 @@ import {
   selectUserById,
   updateUserById,
 } from '../models/user-model.mjs';
+import {customError} from '../middlewares/error-handler.mjs';
 
 const getUsers = async (req, res) => {
   const result = await listAllUsers();
@@ -19,7 +20,7 @@ const getUsers = async (req, res) => {
 const getUserById = async (req, res) => {
   const result = await selectUserById(req.params.id);
   if (result.error) {
-    return res.status(result.error).json(result);
+    return next(customError(result, result.error));
   }
   return res.json(result);
 };

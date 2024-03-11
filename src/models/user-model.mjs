@@ -79,7 +79,7 @@ const deleteUserById = async (id) => {
 };
 
 // Used for login
-const selectUserByUserName = async (username) => {
+const selectUserByUsername = async (username) => {
   try {
     const sql = 'SELECT * FROM Users WHERE username=?';
     const params = [username];
@@ -99,11 +99,12 @@ const selectUserByUserName = async (username) => {
   }
 };
 
+
 export {
   listAllUsers,
   selectUserById,
   insertUser,
   updateUserById,
   deleteUserById,
-  selectUserByUserName,
+  selectUserByUsername
 };
