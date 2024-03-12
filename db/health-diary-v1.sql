@@ -85,6 +85,19 @@ CREATE TABLE ExerciseEntries (
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
+CREATE TABLE Nutrition (
+         nutrition_id INT AUTO_INCREMENT PRIMARY KEY,
+         user_id INT NOT NULL,
+         entry_date DATE NOT NULL,
+         calories_consumed DECIMAL(7,2),
+         protein_grams DECIMAL(7,2),
+         carbohydrates_grams DECIMAL(7,2),
+         fat_grams DECIMAL(7,2),
+         notes TEXT,
+         created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+         FOREIGN KEY (user_id) REFERENCES Users(user_id)
+     );
+
 -- Insert data into ExerciseEntries
 INSERT INTO ExerciseEntries (user_id, exercise_date, exercise_type, duration_minutes, intensity_level, calories_burned, notes, created_at) VALUES
   (1, '2024-01-10', 'Running', 30, 'Moderate', 250.5, 'Nice morning run', '2024-01-10 08:00:00'),

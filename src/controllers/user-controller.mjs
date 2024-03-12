@@ -48,6 +48,7 @@ const postUser = async (req, res, next) => {
 
 // Only user authenticated by token can update own data
 const putUser = async (req, res) => {
+  console.log('PUT /api/users/');
   // Get userinfo from req.user object extracted from token
   const user_id = req.params.id;
   const {username, password, email} = req.body;

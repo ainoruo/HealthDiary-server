@@ -52,14 +52,11 @@ const updateEntryById = async (entry) => {
       'UPDATE DiaryEntries SET entry_date=?, mood=?, weight=?, sleep_hours=?, notes=? WHERE entry_id=?';
     const params = [entry_date, mood, weight, sleep_hours, notes, entry_id];
     const [result] = await promisePool.query(sql, params);
-    // console.log(result);
     if (result.affectedRows === 0) {
       return {error: 404, message: 'entry not found'};
     }
     return {message: 'entry data updated', entry_id};
   } catch (error) {
-    // fix error handling
-    // now duplicate entry error is generic 500 error, should be fixed to 400 ?
     console.error('updateEntryById', error);
     return {error: 500, message: 'db error'};
   }

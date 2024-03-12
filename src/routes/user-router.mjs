@@ -13,7 +13,7 @@ import {authenticateToken} from '../middlewares/authentication.mjs';
 const userRouter = express.Router();
 
 userRouter
-  .route('/:id')
+  .route('/')
   // update user
   .put(
     authenticateToken,

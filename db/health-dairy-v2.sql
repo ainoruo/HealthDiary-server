@@ -46,6 +46,30 @@ CREATE TABLE Exercises (
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
 
+CREATE TABLE Nutrition (
+    nutrition_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    entry_date DATE NOT NULL,
+    calories_consumed DECIMAL(7,2),
+    protein_grams DECIMAL(7,2),
+    carbohydrates_grams DECIMAL(7,2),
+    fat_grams DECIMAL(7,2),
+    notes TEXT,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
+CREATE TABLE HRVMeasurements (
+    hrv_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    measurement_date DATE NOT NULL,
+    time_of_day TIME NOT NULL,
+    hrv_value DECIMAL(7,2) NOT NULL,
+    notes TEXT,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+
 -- Insert sample data
 
 INSERT INTO Users (username, password, email, created_at, user_level) VALUES
