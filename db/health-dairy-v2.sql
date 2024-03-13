@@ -79,24 +79,24 @@ INSERT INTO Users (username, password, email, created_at, user_level) VALUES
 ('bob_brown', 'hashed_password', 'bob@example.com', '2024-01-05 07:45:00', 'regular');
 
 INSERT INTO DiaryEntries (user_id, entry_date, mood, weight, sleep_hours, notes, created_at) VALUES
-(1, '2024-01-10', 'Happy', 70.5, 8, 'Had a great workout session', '2024-01-10 20:00:00'),
-(1, '2024-01-11', 'Satisfied', 65.0, 7, 'Met with friends, had a good time', '2024-01-11 21:00:00'),
-(1, '2024-01-12', 'Tired', 68.0, 6, 'Work was demanding', '2024-01-12 22:00:00'),
-(1, '2024-01-13', 'Energetic', 55.0, 9, 'Went for a morning run', '2024-01-13 18:00:00'),
-(1, '2024-01-14', 'Relaxed', 75.0, 8, 'Spent the day reading', '2024-01-14 19:00:00');
+(7, '2024-01-10', 'Happy', 70.5, 8, 'Had a great workout session', '2024-01-10 20:00:00'),
+(7, '2024-01-11', 'Satisfied', 65.0, 7, 'Met with friends, had a good time', '2024-01-11 21:00:00'),
+(7, '2024-01-12', 'Tired', 68.0, 6, 'Work was demanding', '2024-01-12 22:00:00'),
+(7, '2024-01-13', 'Energetic', 55.0, 9, 'Went for a morning run', '2024-01-13 18:00:00'),
+(7, '2024-01-14', 'Relaxed', 75.0, 8, 'Spent the day reading', '2024-01-14 19:00:00');
 
 INSERT INTO Medications (user_id, name, dosage, frequency, start_date, end_date) VALUES
-(1, 'Vitamin D', '1000 IU', 'Daily', '2024-01-01', '2024-06-01'),
-(1, 'Ibuprofen', '200 mg', 'As needed', '2024-01-05', '2024-01-20'),
-(1, 'Amoxicillin', '500 mg', 'Every 8 hours', '2024-01-10', '2024-01-20'),
-(1, 'Metformin', '500 mg', 'Twice a day', '2024-01-15', '2024-07-15'),
-(1, 'Lisinopril', '10 mg', 'Daily', '2024-01-20', '2024-07-20');
+(7, 'Vitamin D', '1000 IU', 'Daily', '2024-01-01', '2024-06-01'),
+(7, 'Ibuprofen', '200 mg', 'As needed', '2024-01-05', '2024-01-20'),
+(7, 'Amoxicillin', '500 mg', 'Every 8 hours', '2024-01-10', '2024-01-20'),
+(7, 'Metformin', '500 mg', 'Twice a day', '2024-01-15', '2024-07-15'),
+(7, 'Lisinopril', '10 mg', 'Daily', '2024-01-20', '2024-07-20');
 
 INSERT INTO Exercises (user_id, type, duration, intensity, date) VALUES
-(1, 'Running', 30, 'High', '2024-01-10'),
-(1, 'Cycling', 45, 'Medium', '2024-01-11'),
-(1, 'Swimming', 55, 'Low', '2024-01-12'),
-(1, 'Swimming', 30, 'Medium', '2024-01-16'),
-(1, 'Swimming', 60, 'Low', '2024-01-18'),
-(1, 'Yoga', 50, 'Low', '2024-01-18'),
-(1, 'Weight Training', 40, 'High', '2024-01-19');
+(7, 'Running', 30, 'High', '2024-01-10'),
+(7, 'Cycling', 45, 'Medium', '2024-01-11'),
+(7, 'Swimming', 55, 'Low', '2024-01-12'),
+(7, 'Swimming', 30, 'Medium', '2024-01-16'),
+(7, 'Swimming', 60, 'Low', '2024-01-18'),
+(7, 'Yoga', 50, 'Low', '2024-01-18'),
+(7, 'Weight Training', 40, 'High', '2024-01-19');
