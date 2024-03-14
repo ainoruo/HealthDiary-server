@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HRV</title>
-    <script type="module" crossorigin src="/assets/hrv-DsZIruTK.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/style-928bxCnj.js">
+    <script type="module" crossorigin src="/assets/hrv-BT10gbdb.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/toast-ClxvtS15.js">
     <link rel="modulepreload" crossorigin href="/assets/fetch-CGUiTqyx.js">
-    <link rel="stylesheet" crossorigin href="/assets/style-BBqjMKp2.css">
+    <link rel="stylesheet" crossorigin href="/assets/toast-CFomyLlr.css">
   </head>
   <body>
     <nav>
@@ -64,6 +64,7 @@
           rows="4"
           cols="50"
           placeholder="Example: Measured at morning"
+          minlength="0" maxlength="300"
         ></textarea
         ><br /><br />
         <input type="hidden" id="created_at" name="created_at" value="" />
@@ -103,12 +104,12 @@
           <input type="text" id="edit-hrv-value" name="edit-hrv-value" required /><br /><br />
           
           <label for="edit-notes">Notes:</label>
-          <textarea name="edit-notes" id="edit-notes" cols="50" rows="4"></textarea>
+          <textarea name="edit-notes" id="edit-notes" cols="50" rows="4" minlength="0" maxlength="300"></textarea>
           
           <button type="submit">Update HRV Measurement</button>
         </form>
       </div>
     </div>
-
+    <div id="toast-container"></div>
   </body>
 </html>

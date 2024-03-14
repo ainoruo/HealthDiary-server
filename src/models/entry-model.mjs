@@ -95,40 +95,28 @@ const updateMedicationById = async (entry) => {
   }
 };
 
-const updateNutritionById = async (entry) => {
-  const {
-    nutrition_id,
-    entry_date,
-    calories_consumed,
-    protein_grams,
-    carbohydrates_grams,
-    fat_grams,
-    notes,
-  } = entry;
+const updateNutritionById = async (nutrition_id, userId, entryData ) => {
   try {
-    const sql =
-      'UPDATE Nutrition SET entry_date=?, calories_consumed=?, protein_grams=?, carbohydrates_grams=?, fat_grams=?, notes=? WHERE nutrition_id=?';
-    const params = [
-      entry_date,
-      calories_consumed,
-      protein_grams,
-      carbohydrates_grams,
-      fat_grams,
-      notes,
-      nutrition_id,
-    ];
+    const params = [entryData, nutrition_id, userId];
+    // format() function is used to include only the fields that exists
+    // in the entryData object to the SQL query
+    const sql = promisePool.format(
+      `UPDATE Nutrition SET ?
+       WHERE nutrition_id=? AND user_id=?`,
+      params
+    );
     const [result] = await promisePool.query(sql, params);
     if (result.affectedRows === 0) {
-      return {error: 404, message: 'entry not found'};
+      return {error: 404, message: 'Entry not found'};
     }
-    return {message: 'Nutrition data updated', nutrition_id};
+    return {message: 'Entry data updated', entry_id: entryId};
   } catch (error) {
     // fix error handling
     // now duplicate entry error is generic 500 error, should be fixed to 400 ?
     console.error('updateNutritionById', error);
     return {error: 500, message: 'db error'};
   }
-};
+}
 
 const updateExerciseById = async (exercise_id, userId, entryData) => {
   try {

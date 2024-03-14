@@ -4,33 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HRV</title>
-    <script type="module" crossorigin src="/assets/diaries-Ceir5lUS.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/style-928bxCnj.js">
+    <script type="module" crossorigin src="/assets/diaries-XnThWWFy.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/toast-ClxvtS15.js">
     <link rel="modulepreload" crossorigin href="/assets/fetch-CGUiTqyx.js">
-    <link rel="stylesheet" crossorigin href="/assets/style-BBqjMKp2.css">
+    <link rel="stylesheet" crossorigin href="/assets/toast-CFomyLlr.css">
   </head>
   <body>
     <nav>
-        <span class="logo">HealthDiary</span>
-        <button class="menu-toggle">☰</button>
-        <ul class="menu">
-            <li class="dropdown">
-                <a href="diary.html">Home</a>
-              </li>
-          <li class="dropdown">
-            <a href="#">Categories</a>
-            <div class="dropdown-content">
-              <a href="exercise.html">Exercise</a>
-              <a href="nutrition.html">Nutrition</a>
-              <a href="diaries.html">Diary Entries</a>
-              <a href="medication.html">Medications</a>
-              <a href="hrv.html">HRV Measurements</a>
-            </div>
-          </li>
-          <li><a href="settings.html">Settings</a></li>
-          <li class="logout"><a href="#">Log Out</a></li>
-        </ul>
-      </nav>
+      <span class="logo">HealthDiary</span>
+      <button class="menu-toggle">☰</button>
+      <ul class="menu">
+        <li class="dropdown">
+          <a href="diary.html">Home</a>
+        </li>
+        <li class="dropdown">
+          <a href="#">Categories</a>
+          <div class="dropdown-content">
+            <a href="exercise.html">Exercise</a>
+            <a href="nutrition.html">Nutrition</a>
+            <a href="diaries.html">Diary Entries</a>
+            <a href="medication.html">Medications</a>
+            <a href="hrv.html">HRV Measurements</a>
+          </div>
+        </li>
+        <li><a href="settings.html">Settings</a></li>
+        <li class="logout"><a href="#">Log Out</a></li>
+      </ul>
+    </nav>
     <div class="diaries-backround">
       <form id="exercise-form">
         <h3>Add New Diary Entry</h3>
@@ -44,8 +44,8 @@
           <option value="Tired">Tired</option>
           <option value="Energetic">Energetic</option>
           <option value="Relaxed">Relaxed</option>
-          <option value="Exhausted">Exhausted</option></select>
-     
+          <option value="Exhausted">Exhausted</option>
+        </select>
 
         <label for="weight">Weight:</label>
         <input
@@ -72,6 +72,8 @@
           rows="4"
           cols="50"
           placeholder="Example: Work was demanding. Spent time with friends."
+          minlength="0"
+          maxlength="300"
         ></textarea
         ><br /><br />
         <input type="hidden" id="created_at" name="created_at" value="" />
@@ -100,10 +102,20 @@
         <span class="close-button">×</span>
         <form id="edit-form">
           <h3>Edit Diary Entry</h3>
-          <input type="hidden" id="edit-entry-id" name="edit-entry-id" required />
+          <input
+            type="hidden"
+            id="edit-entry-id"
+            name="edit-entry-id"
+            required
+          />
 
           <label for="edit-date">Date:</label>
-          <input type="date" id="edit-date" name="edit-date" required /><br /><br />
+          <input
+            type="date"
+            id="edit-date"
+            name="edit-date"
+            required
+          /><br /><br />
 
           <label for="edit-mood">Mood:</label>
           <select id="edit-mood" name="edit-mood" required>
@@ -132,13 +144,20 @@
           /><br /><br />
 
           <label for="edit-notes">Notes:</label><br />
-          <textarea id="edit-notes" name="edit-notes" rows="4" cols="50"></textarea
+          <textarea
+            id="edit-notes"
+            name="edit-notes"
+            rows="4"
+            cols="50"
+            minlength="0"
+            maxlength="300"
+          ></textarea
           ><br /><br />
 
           <button type="submit">Update Entry</button>
         </form>
       </div>
     </div>
-
+    <div id="toast-container"></div>
   </body>
 </html>

@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HealthDiary</title>
-    <script type="module" crossorigin src="/assets/settings-Dw8CmfQ6.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/style-928bxCnj.js">
-    <link rel="stylesheet" crossorigin href="/assets/style-BBqjMKp2.css">
+    <script type="module" crossorigin src="/assets/settings-DdIUzD2q.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/toast-ClxvtS15.js">
+    <link rel="stylesheet" crossorigin href="/assets/toast-CFomyLlr.css">
   </head>
   <body>
     <nav>
@@ -54,6 +54,13 @@
 
         <button id="save-changes">Save Changes</button>
       </form>
-    </div>
+      <form id="delete-form">
+        <h3>Delete User:</h3>
+        <label for="delete-confirm">Type "delete user" to confirm</label>
+        <input type="text" id="delete-confirm" name="delete-confirm" required>
+        <button id="delete-user" class="delete-user-button">Delete user</button>
+      </form>
+    </div>
+    <div id="toast-container"></div>
   </body>
 </html>

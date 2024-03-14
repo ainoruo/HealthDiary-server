@@ -107,11 +107,10 @@ const deleteHrv = async (req, res ,next) => {
 const getMedicationsByUser = async (req, res) => {
   const userId = req.user.user_id;
   const result = await listMedicationsByUser(userId);
-  if (!result.error) {
+  if (result) {
     res.json(result);
   } else {
-    res.status(500);
-    res.json(result);
+    next(customError('Entry not found', 404));
   }
 };
 
@@ -166,18 +165,14 @@ const putMedication = async (req, res,) => {
   }
 };
 
-const putNutrition = async (req, res) => {
+const putNutrition = async (req, res, next) => {
   const nutrition_id = req.params.id;
-  const {entry_date, calories_consumed, protein_grams, carbohydrates_grams, fat_grams, notes} = req.body;
-  if ((entry_date || calories_consumed || protein_grams || carbohydrates_grams || fat_grams || notes) && nutrition_id) {
-    const result = await updateNutritionById({nutrition_id, ...req.body});
-    if (result.error) {
-      return res.status(result.error).json(result);
-    }
-    return res.status(201).json(result);
-  } else {
-    return res.status(400).json({error: 400, message: 'bad request'});
+  const userId = req.user.user_id;
+  const result = await updateNutritionById(nutrition_id, userId, req.body);
+  if (result.error) {
+    return next(customError(result.message, result.error));
   }
+  return res.status(201).json(result);
 };
 
 const getNutritionByUser = async (req, res) => {
