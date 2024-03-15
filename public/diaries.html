@@ -46,6 +46,7 @@
           <option value="Energetic">Energetic</option>
           <option value="Relaxed">Relaxed</option>
           <option value="Exhausted">Exhausted</option>
+          <option value="Sad">Sad</option>
         </select>
 
         <label for="weight">Weight:</label>
@@ -70,11 +71,10 @@
         <input type="text"
           id="notes"
           name="notes"
-          placeholder="Example: Work was demanding. Spent time with friends."
+          placeholder="Example: Work was demanding."
           minlength="0"
           maxlength="300"
-        ></textarea
-        ><br /><br />
+        ></input>
         <input type="hidden" id="created_at" name="created_at" value="" />
         <button type="submit">Add Diary Entry</button>
       </form>
@@ -113,7 +113,7 @@
             id="edit-date"
             name="edit-date"
             required
-          /><br /><br />
+          />
 
           <label for="edit-mood">Mood:</label>
           <select id="edit-mood" name="edit-mood" required>
@@ -124,7 +124,6 @@
             <option value="Relaxed">Relaxed</option>
             <option value="Exhausted">Exhausted</option></select
           ><br /><br />
-
           <label for="edit-weight">Weight:</label>
           <input
             type="number"
@@ -142,15 +141,11 @@
           /><br /><br />
 
           <label for="edit-notes">Notes:</label><br />
-          <textarea
+          <input type="text"
             id="edit-notes"
             name="edit-notes"
-            rows="4"
-            cols="50"
             minlength="0"
-            maxlength="300"
-          ></textarea
-          ><br /><br />
+            maxlength="300"></input>
 
           <button type="submit">Update Entry</button>
           <button type="button" id="delete-exercise" class="delete-button">
