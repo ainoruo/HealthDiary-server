@@ -1,1 +1,0 @@
-import"./style-CJ8NlejR.js";document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector(".menu-toggle"),n=document.querySelector(".menu");e.addEventListener("click",function(){n.classList.toggle("show")})});
