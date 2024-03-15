@@ -10,7 +10,7 @@
       rel="stylesheet"
     /> -->
     <title>Exercise</title>
-    <script type="module" crossorigin src="/assets/medications-55kkdr4b.js"></script>
+    <script type="module" crossorigin src="/assets/medications-DvU5pUQN.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/style-C8ZCfusv.js">
     <link rel="modulepreload" crossorigin href="/assets/fetch-CGUiTqyx.js">
     <link rel="modulepreload" crossorigin href="/assets/toast-B-6j1RQv.js">
@@ -43,13 +43,13 @@
         <h3>Add New Medication</h3>
         
         <label for="name">Medication Name:</label>
-        <input type="text" id="name" name="name" required /><br /><br />
+        <input type="text" id="name" name="name" minlength="3" maxlength="30" /><br /><br />
 
         <label for="dosage">Dosage:</label>
-        <input type="text" id="dosage" name="dosage" required /><br /><br />
+        <input type="text" id="dosage" name="dosage" minlength="1" maxlength="10" required /><br /><br />
         
         <label for="dosage">Frequency:</label>
-        <input type="text" id="dosage" name="frequency" required /><br /><br />
+        <input type="text" id="dosage" name="frequency" minlength="1" maxlength="20" required /><br /><br />
         
         <label for="date">Start Date:</label>
         <input type="date" id="date" name="start_date" required /><br /><br />
@@ -84,13 +84,13 @@
           <input type="hidden" id="edit-entry-id" name="edit-entry-id" required />
 
           <label for="edit-name">Name:</label>
-          <input type="text" id="edit-name" name="edit-name" required /><br /><br />
+          <input type="text" id="edit-name" name="edit-name" minlength="3" maxlength="30" required /><br /><br />
 
           <label for="edit-dosage">Dosage:</label>
-          <input type="text" id="edit-dosage" name="edit-dosage" required /><br /><br />
+          <input type="text" id="edit-dosage" name="edit-dosage" minlength="1" maxlength="10" required /><br /><br />
 
           <label for="edit-frequency">Frequency:</label>
-          <input type="text" id="edit-frequency" name="edit-frequency" required /><br /><br />
+          <input type="text" id="edit-frequency" name="edit-frequency" minlength="1" maxlength="20" required /><br /><br />
           <label for="edit-date">Start Date:</label>
           <input type="date" id="edit-start-date" name="edit-start-date" required /> <br /><br />
           <label for="edit-date">End Date:</label>

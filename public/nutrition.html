@@ -10,7 +10,7 @@
       rel="stylesheet"
     /> -->
     <title>Nutrition</title>
-    <script type="module" crossorigin src="/assets/nutrition-B9y8KUd1.js"></script>
+    <script type="module" crossorigin src="/assets/nutrition-DWKS54KQ.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/style-C8ZCfusv.js">
     <link rel="modulepreload" crossorigin href="/assets/fetch-CGUiTqyx.js">
     <link rel="modulepreload" crossorigin href="/assets/toast-B-6j1RQv.js">
@@ -46,19 +46,19 @@
         <input type="date" id="entry_date" name="entry_date" required /><br /><br />
         
         <label for="name">Calories Consumed:</label>
-        <input type="text" id="calories_consumed" name="calories_consumed" required /><br /><br />
+        <input type="text" id="calories_consumed" name="calories_consumed" minlength="1" maxlength="15" required /><br /><br />
 
         <label for="protein">Protein Grams:</label>
-        <input type="text" id="protein_grams" name="protein_grams" required /><br /><br />
+        <input type="text" id="protein_grams" name="protein_grams" minlength="1" maxlength="15" required /><br /><br />
         
         <label for="carbs">Carbohydrates Grams:</label>
-        <input type="text" id="carbohydrates_grams" name="carbohydrates_grams" required /><br /><br />
+        <input type="text" id="carbohydrates_grams" name="carbohydrates_grams" minlength="1" maxlength="15" required /><br /><br />
         
         <label for="fats">Fat Grams:</label>
-        <input type="text" id="fat_grams" name="fat_grams" required /><br /><br />
+        <input type="text" id="fat_grams" name="fat_grams" minlength="1" maxlength="15" required /><br /><br />
 
         <label for="notes">Notes:</label>
-        <input type="text" id="notes" name="notes" /><br /><br />
+        <input type="text" id="notes" name="notes" minlength="1" maxlength="300" required/><br /><br />
 
         <button type="submit">Add Nutrition Entry</button>
       </form>
@@ -91,19 +91,19 @@
           <input type="date" id="edit-date" name="edit-date" required /><br /><br />
 
           <label for="edit-calories-consumed">Calories Consumed:</label>
-          <input type="text" id="edit-calories-consumed" name="edit-calories-consumed" required /><br /><br />
+          <input type="text" id="edit-calories-consumed" name="edit-calories-consumed" minlength="1" maxlength="15" required /><br /><br />
 
           <label for="edit-carbohydrates-grams">Carbohydrates Grams:</label>
-          <input type="text" id="edit-carbohydrates-grams" name="edit-carbohydrates-grams" required /><br /><br />
+          <input type="text" id="edit-carbohydrates-grams" name="edit-carbohydrates-grams" minlength="1" maxlength="15" required /><br /><br />
           
           <label for="edit-protein-grams">Protein Grams:</label>
-          <input type="text" id="edit-protein-grams" name="edit-protein-grams" required /> <br /><br />
+          <input type="text" id="edit-protein-grams" name="edit-protein-grams" minlength="1" maxlength="15" required /> <br /><br />
           
           <label for="edit-fat-grams">Fat Grams:</label>
-          <input type="text" id="edit-fat-grams" name="edit-fat-grams" required /> <br /><br />
+          <input type="text" id="edit-fat-grams" name="edit-fat-grams" minlength="1" maxlength="15" required /> <br /><br />
           
           <label for="edit-notes">Notes:</label>
-          <input type="text" id="edit-notes" name="edit-notes" /><br /><br />
+          <input type="text" id="edit-notes" name="edit-notes" minlength="1" maxlength="300"/><br /><br />
 
           <button type="submit">Update Nutrition</button>
           <button type="button" id="delete-entry" class="delete-button">Delete Entry</button>
