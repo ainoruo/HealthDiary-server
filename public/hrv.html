@@ -59,14 +59,12 @@
           required
         /><br /><br />
         <label for="notes">Notes:</label><br />
-        <textarea
+        <input type="text"
           id="notes"
           name="notes"
-          rows="4"
-          cols="50"
           placeholder="Example: Measured at morning"
           minlength="0" maxlength="300"
-        ></textarea
+        ></input
         ><br /><br />
         <input type="hidden" id="created_at" name="created_at" value="" />
         <button type="submit">Add HRV Measurement</button>
@@ -104,7 +102,7 @@
           <input type="text" id="edit-hrv-value" name="edit-hrv-value" required /><br /><br />
           
           <label for="edit-notes">Notes:</label>
-          <textarea name="edit-notes" id="edit-notes" cols="50" rows="4" minlength="0" maxlength="300"></textarea>
+          <input type="text" name="edit-notes" id="edit-notes"  minlength="0" maxlength="300"></textarea>
           
           <button type="submit">Update HRV Measurement</button>
           <button type="button" id="delete-entry" class="delete-button">Delete Entry</button>
