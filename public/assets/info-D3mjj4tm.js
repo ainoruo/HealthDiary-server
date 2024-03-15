@@ -1,0 +1,1 @@
+import"./style-msN2JXF1.js";document.addEventListener("DOMContentLoaded",function(){const e=document.querySelector(".menu-toggle"),n=document.querySelector(".menu");e.addEventListener("click",function(){n.classList.toggle("show")})});
