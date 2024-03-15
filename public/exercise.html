@@ -10,11 +10,11 @@
       rel="stylesheet"
     />
     <title>Exercise</title>
-    <script type="module" crossorigin src="/assets/exercise-B6WZXHlJ.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/style-DwIR8jLK.js">
+    <script type="module" crossorigin src="/assets/exercise-CqzI50xk.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/style-CNpknRdY.js">
     <link rel="modulepreload" crossorigin href="/assets/fetch-CGUiTqyx.js">
     <link rel="modulepreload" crossorigin href="/assets/toast-B-6j1RQv.js">
-    <link rel="stylesheet" crossorigin href="/assets/style-CEKVoOFF.css">
+    <link rel="stylesheet" crossorigin href="/assets/style-DLZn3HGf.css">
   </head>
   <body>
     <nav>
@@ -45,29 +45,18 @@
         <input type="date" id="date" name="date" required /><br /><br />
 
         <label for="type">Exercise Type:</label>
-        <select id="type" name="type" required>
-          <option value="Running">Running</option>
-          <option value="Cycling">Cycling</option>
-          <option value="Swimming">Swimming</option>
-          <option value="Yoga">Yoga</option>
-          <option value="Weight Training">Weight training</option>
-          <option value="Walking">Walking</option></select
-        ><br /><br />
-
+        <input type="text" id="type" name="type" minlength="2" maxlength="15" required>
         <label for="duration">Duration (minutes):</label>
         <input
           type="number"
           id="duration"
-          name="duration"
-          required
-        /><br /><br />
-
+          name="duration" minlength="1" maxlength="4" 
+          required>
         <label for="intensity">Intensity:</label>
         <select id="intensity" name="intensity" required>
           <option value="Low">Low</option>
           <option value="Medium">Medium</option>
-          <option value="High">High</option></select
-        ><br /><br />
+          <option value="High">High</option></select>
 
         <button type="submit">Add Exercise</button>
       </form>
@@ -80,7 +69,6 @@
             <th>Type</th>
             <th>Duration</th>
             <th>Intensity</th>
-            <th>Delete</th>
             <th>Edit</th>
           </tr>
         </thead>
@@ -99,26 +87,20 @@
             <input type="date" id="edit-date" name="edit-date" required /><br /><br />
   
             <label for="edit-type">Type:</label>
-            <select id="edit-type" name="edit-type" required>
-                <option value="Running">Running</option>
-                <option value="Cycling">Cycling</option>
-                <option value="Swimming">Swimming</option>
-                <option value="Yoga">Yoga</option>
-                <option value="Weight Training">Weight training</option>
-                <option value="Walking">Walking</option></select
-              ><br /><br />
+            <input type="text" id="edit-type" name="edit-type" minlength="3" maxlength="15" required>
+
   
             <label for="edit-duration">Duration:</label>
-            <input type="number" id="edit-duration" name="edit-duration" required /><br /><br />
+            <input type="number" id="edit-duration" name="edit-duration" minlength="1" maxlength="4" required /><br /><br />
             
             <label for="edit-intensity">Intensity:</label>
             <select id="edit-intensity" name="edit-intensity" required>
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
-                <option value="High">High</option></select
-              ><br /><br />
+                <option value="High">High</option></select>
             
             <button type="submit">Update Exercise</button>
+            <button type="button" id="delete-exercise" class="delete-button">Delete Exercise</button>
           </form>
         </div>
       </div>
