@@ -76,25 +76,15 @@ Authorization: Bearer <token>
 POST http://127.0.0.1:3000/api/users
 content-type: application/json
 
-{
-  "username": "test-update4",
-  "password": "test-pw-update4",
-  "email": "update4@example.com"
-}
-
 # Update user's own data (requires token)
 PUT http://127.0.0.1:3000/api/users/
 Authorization: Bearer <token>
 content-type: application/json
 
-{
-  "username": "test-update4",
-  "password": "test-pw-update4",
-  "email": "update4@example.com"
-}
+
 ```
 
-### `/api/entries` used to get, post, put and delete Diary entries in the application.
+### `/api/entries`, used to get, post, put and delete Diary entries in the application.
 
 Example queries:
 
