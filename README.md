@@ -35,7 +35,7 @@ The front-end client is a web application located in the `public` directory. It 
 Scripts for database can be found from file named health-diary.sql
 Structure of the database shown below.
 
-![Database used in the application](images/database.pmg)
+![Database used in the application](images/database.png)
 
 ## Resources and endpoints
 
