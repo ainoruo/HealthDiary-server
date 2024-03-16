@@ -1,5 +1,6 @@
 # HealhtDiary application
 
+![front page of the application](images/frontpage.png)
 
 HealthDiary provides a convenient and user-friendly way to record and monitor information related to health, such as exercise, nutrition, heart rate variability (HRV), and medication.
 
