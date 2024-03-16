@@ -1,8 +1,12 @@
-# HealhtDiary application
+# HealthDiary application
+
+HealthDiary provides a convenient and user-friendly way to record and monitor information related to health, such as exercise, nutrition, heart rate variability (HRV), and medication.
 
 ![front page of the application](images/frontpage.png)
 
-HealthDiary provides a convenient and user-friendly way to record and monitor information related to health, such as exercise, nutrition, heart rate variability (HRV), and medication.
+![diary view of the application](images/diary.png)
+
+![exercise page of the application](images/exercisepage.png)
 
 This repository contains both the back-end server and the front-end client for the HealthDiary application. The back-end is built with Node.js and Express, providing RESTful APIs, while the front-end is served from the `public` directory and is responsible for the user interface.
 
