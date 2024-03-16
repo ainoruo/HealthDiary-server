@@ -1,8 +1,14 @@
-# back-end server for HealhtDiary application
+# HealhtDiary application
 
-This is a back-end server implementation for a health tracking application using Node.js and Express. It provides RESTful APIs to interact with health data stored in a MySQL/MariaDB database.
+HealthDiary provides a convenient and user-friendly way to record and monitor information related to health, such as exercise, nutrition, heart rate variability (HRV), and medication.
 
-**Node.js + Express** application.
+This repository contains both the back-end server and the front-end client for the HealthDiary application. The back-end is built with Node.js and Express, providing RESTful APIs, while the front-end is served from the `public` directory and is responsible for the user interface.
+
+### Usage (Back-End)
+
+The back-end server is a Node.js + Express application that interacts with a MySQL/MariaDB database to manage health-related data.
+
+To get the back-end server running locally, follow these steps:
 
 ## Usage
 
@@ -12,6 +18,10 @@ This is a back-end server implementation for a health tracking application using
 4. Import database script(s) in `db/` folder
 5. Create `.env` file based on `.env.sample`
 6. Start the dev server: `npm run dev` / `npm start`
+
+## Front-End Client
+
+The front-end client is a web application located in the `public` directory. It interacts with the back-end server to present data and provide an interactive user interface.
 
 ## Resources and endpoints
 
@@ -84,7 +94,7 @@ content-type: application/json
 }
 ```
 
-### `/api/entries`
+### `/api/entries` used to get, post, put and delete Diary entries in the application.
 
 Example queries:
 
