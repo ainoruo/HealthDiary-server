@@ -30,6 +30,13 @@ To get the back-end server running locally, follow these steps:
 
 The front-end client is a web application located in the `public` directory. It interacts with the back-end server to present data and provide an interactive user interface.
 
+## Database
+
+Scripts for database can be found from file named health-diary.sql
+Structure of the database shown below.
+
+![Database used in the application](images/database.pmg)
+
 ## Resources and endpoints
 
 ### `/items` (works with hard-coded mock data only, no need for db)
