@@ -111,7 +111,7 @@ GET http://localhost:3000/api/entries/exercise/:id
 Authorization: Bearer <token>
 
 # Post exercise entry for a logged in user (requires token and user_id)
-POST http://localhost:3000/api/entries/exercise:id
+POST http://localhost:3000/api/entries/exercise/:id
 content-type: application/json
 Authorization: Bearer <token>
 
@@ -123,3 +123,70 @@ Authorization: Bearer <token>
 # Delete exercise entry (requires token and exercise_id)
 DELETE http://localhost:3000/api/entries/exercise/:id
 ```
+### `api/entries/hrv/:id`, used to get, post, put and delete hrv entries in the application
+
+```http
+# Get all hrv entries for a logged in user (requires token and user_id)
+GET http://localhost:3000/api/entries/hrv/:id
+content-type: application/json
+Authorization: Bearer <token>
+
+# Post hrv entry for a logged in user (requires token and user_id)
+POST http://localhost:3000/api/entries/hrv/:id
+content-type: application/json
+Authorization: Bearer <token>
+
+# Update hrv entry for a logged in user(requires token and user_id
+PUT http://localhost:3000/api/entries/hrv/:id
+content-type: application/json
+Authorization: Bearer <token>
+
+# Delete hrv entry (requires token and hrv_id)
+DELETE http://localhost:3000/api/entries/hrv/:id
+Authorization: Bearer <token>
+```
+### `api/entries/medications/:id`, used to get, post, put and delete medication entries in the application
+
+```http
+# Get all medication entries for a logged in user (requires token and user_id)
+GET http://localhost:3000/api/entries/medications/:id
+content-type: application/json
+Authorization: Bearer <token>
+
+# Post medication entry for a logged in user (requires token and user_id)
+POST http://localhost:3000/api/entries/medications/:id
+content-type: application/json
+Authorization: Bearer <token>
+
+# Update medication entry for a logged in user(requires token and user_id
+PUT http://localhost:3000/api/entries/medications/:id
+content-type: application/json
+Authorization: Bearer <token>
+
+# Delete hrv entry (requires token and medication_id)
+DELETE http://localhost:3000/api/entries/medications/:id
+Authorization: Bearer <token>
+```
+### `api/entries/nutrition/:id`, used to get, post, put and delete nutrition entries in the application
+
+```http
+# Get all nutrition entries for a logged in user (requires token and user_id)
+GET http://localhost:3000/api/entries/nutrition/:id
+content-type: application/json
+Authorization: Bearer <token>
+
+# Post nutrition entry for a logged in user (requires token and user_id)
+POST http://localhost:3000/api/entries/nutrition/:id
+content-type: application/json
+Authorization: Bearer <token>
+
+# Update nutrition entry for a logged in user(requires token and user_id
+PUT http://localhost:3000/api/entries/nutrition/:id
+content-type: application/json
+Authorization: Bearer <token>
+
+# Delete nutrition entry (requires token and nutrition_id)
+DELETE http://localhost:3000/api/entries/nutrition/:id
+Authorization: Bearer <token>
+```
+
