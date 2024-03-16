@@ -1,10 +1,8 @@
-# Hyte web dev example back-end server
+# back-end server for HealhtDiary application
 
-**NOTE!** token expiration time is moved/added to `.env` file. Check [`.env.sample`](./.env.sample)
+This is a back-end server implementation for a health tracking application using Node.js and Express. It provides RESTful APIs to interact with health data stored in a MySQL/MariaDB database.
 
 **Node.js + Express** application.
-
-(Check week/feature branches too.)
 
 ## Usage
 
