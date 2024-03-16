@@ -37,6 +37,7 @@ Structure of the database shown below.
 
 ![Database used in the application](images/database.png)
 
+
 ## Resources and endpoints
 
 ### `/items` (works with hard-coded mock data only, no need for db)
