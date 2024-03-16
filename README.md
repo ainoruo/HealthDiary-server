@@ -11,9 +11,12 @@ This repository contains both the back-end server and the front-end client for t
 ### Home page after logging in.
 ![diary view of the application](images/diary.png)
 
-### Exercise category
+### Exercise category.
 ![exercise page of the application](images/exercisepage.png)
 
+### Diary entries edit modal.
+
+![edit modal](images/edit.png)
 
 ### Usage (Back-End)
 
