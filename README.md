@@ -1,5 +1,6 @@
 # HealhtDiary application
 
+
 HealthDiary provides a convenient and user-friendly way to record and monitor information related to health, such as exercise, nutrition, heart rate variability (HRV), and medication.
 
 This repository contains both the back-end server and the front-end client for the HealthDiary application. The back-end is built with Node.js and Express, providing RESTful APIs, while the front-end is served from the `public` directory and is responsible for the user interface.
@@ -39,16 +40,10 @@ body: {"name": "New Item"}
 
 ### `/api/auth`
 
-Example queries:
-
 ```http
 # Login
 POST http://localhost:3000/api/users/login
 content-type: application/json
-{
-  "username": "user",
-  "password": "secret"
-}
 
 ## Get user by token (requires token)
 GET http://localhost:3000/api/auth/me
@@ -56,8 +51,6 @@ Authorization: Bearer <token>
 ```
 
 ### `/api/users`
-
-Example queries:
 
 ```http
 # Get all users (requires token)
@@ -86,8 +79,6 @@ content-type: application/json
 
 ### `/api/entries`, used to get, post, put and delete Diary entries in the application.
 
-Example queries:
-
 ```http
 # Get all entries for a logged in user (requires token)
 GET http://localhost:3000/api/entries
@@ -100,28 +91,30 @@ GET http://localhost:3000/api/entries/:id
 POST http://localhost:3000/api/entries
 content-type: application/json
 
-{
-  "entry_date": "2024-02-12",
-  "mood": "Happy",
-  "weight": 69.6,
-  "sleep_hours": 7,
-  "notes": "This was a good day",
-  "user_id": 3
-}
-
 # Update entry
 PUT http://localhost:3000/api/entries/:id
 content-type: application/json
 
-{
-  "entry_date": "2024-02-12",
-  "mood": "Even more happy now",
-  "weight": 69.6,
-  "sleep_hours": 7,
-  "notes": "This was a good day",
-  "user_id": 3
-}
-
 # Delete entry
 DELETE http://localhost:3000/api/entries/:id
+```
+### `api/entries/exercise/:id`, used to get, post, put and delete exercise entries in the application
+
+```http
+# Get all exercise entries for a logged in user (requires token and user_id)
+GET http://localhost:3000/api/entries/exercise/:id
+Authorization: Bearer <token>
+
+# Post exercise entry for a logged in user (requires token and user_id)
+POST http://localhost:3000/api/entries/exercise:id
+content-type: application/json
+Authorization: Bearer <token>
+
+# Update exercise entry for a logged in user(requires token and user_id
+PUT http://localhost:3000/api/entries/exercise/:id
+content-type: application/json
+Authorization: Bearer <token>
+
+# Delete exercise entry (requires token and exercise_id)
+DELETE http://localhost:3000/api/entries/exercise/:id
 ```
