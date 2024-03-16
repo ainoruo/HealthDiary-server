@@ -4,6 +4,8 @@ HealthDiary provides a convenient and user-friendly way to record and monitor in
 
 This repository contains both the back-end server and the front-end client for the HealthDiary application. The back-end is built with Node.js and Express, providing RESTful APIs, while the front-end is served from the `public` directory and is responsible for the user interface.
 
+Front-end repository can also be found here: [Front-end](https://github.com/ainoruo/healthdiary)
+
 
 ### Login page of the application.
 ![front page of the application](images/frontpage.png)
